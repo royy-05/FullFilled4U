@@ -168,10 +168,10 @@ export default function Hero({ onOpenProposal }) {
         {/* Live Performance Benchmarks Row */}
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {[
-            { label: 'Client Revenue Scaled', val: '$120M+', sub: 'Verified Across Funnels', icon: TrendingUp },
-            { label: 'Brands Scaled Globally', val: '140+', sub: 'E-Commerce & Enterprise', icon: ShieldCheck },
-            { label: 'Average Campaign ROAS', val: '5.8X', sub: 'Meta, Google & TikTok', icon: Zap },
-            { label: 'Client Retention Rate', val: '99.4%', sub: 'Long-Term Partners', icon: Target }
+            { val: '₹150Cr+', label: 'Client Revenue Generated', sub: 'Across All D2C Brands', icon: TrendingUp },
+            { val: '50+', label: 'Brands Scaled', sub: 'Across Fashion, Beauty, FMCG & More', icon: ShieldCheck },
+            { val: '5.2X', label: 'Average Campaign ROAS', sub: 'Meta & Google Ads', icon: Zap },
+            { val: '94%', label: 'Client Retention Rate', sub: 'Long-Term Growth Partners', icon: Target }
           ].map((item, idx) => (
             <motion.div
               key={idx}
@@ -179,17 +179,17 @@ export default function Hero({ onOpenProposal }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white p-4 sm:p-5 rounded-2xl border border-[#E5E7EB] shadow-lg shadow-[#282734]/5 hover:border-[#EC2D2E]/40 transition-all flex items-center justify-between group font-sans"
+              className="bg-white p-3.5 sm:p-4 rounded-xl border border-[#E5E7EB] shadow-sm shadow-[#282734]/5 hover:border-[#EC2D2E]/40 transition-all flex items-center justify-between group font-sans"
             >
-              <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-[#282734] font-sans tracking-tight group-hover:text-[#EC2D2E] transition-colors">
+              <div className="space-y-0.5">
+                <div className="text-lg sm:text-xl font-extrabold text-[#282734] font-sans tracking-tight group-hover:text-[#EC2D2E] transition-colors">
                   {item.val}
                 </div>
-                <div className="text-xs font-bold text-[#282734] font-sans">{item.label}</div>
-                <div className="text-[10px] text-[#6B7280] font-medium font-sans">{item.sub}</div>
+                <div className="text-xs font-bold text-[#282734] font-sans leading-snug">{item.label}</div>
+                <div className="text-[10px] text-[#6B7280] font-medium font-sans leading-tight">{item.sub}</div>
               </div>
-              <div className="p-2 rounded-xl bg-[#F8F9FC] text-[#EC2D2E] group-hover:bg-[#EC2D2E] group-hover:text-white transition-colors">
-                <item.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="p-2 rounded-xl bg-[#FFF5F5] text-[#EC2D2E] group-hover:bg-[#EC2D2E] group-hover:text-white transition-all shrink-0 ml-2">
+                <item.icon className="w-4 h-4" />
               </div>
             </motion.div>
           ))}

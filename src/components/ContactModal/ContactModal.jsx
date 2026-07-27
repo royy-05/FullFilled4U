@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Sparkles, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { X, Sparkles, Send, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import Button from '../Button/Button';
 
 export default function ContactModal({ isOpen, onClose }) {
@@ -9,29 +10,56 @@ export default function ContactModal({ isOpen, onClose }) {
     email: '',
     phone: '',
     monthlyOrders: '100-500 orders/mo',
-    primaryGoal: 'Shopify Store Creation & 3PL Shipping'
+    primaryGoal: 'Shopify Setup & 3PL Shipping'
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      company: 'Modal Lead',
+      services: formData.primaryGoal,
+      message: `Request Shipping Plan Modal Submitted (Monthly Volume: ${formData.monthlyOrders})`,
+      to_email: 'info@fullfilled4u.in'
+    };
+
+    try {
+      if (serviceId && serviceId !== 'YOUR_SERVICE_ID' && publicKey && publicKey !== 'YOUR_PUBLIC_KEY') {
+        await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      } else {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
       setLoading(false);
       setSubmitted(true);
-    }, 1000);
+    } catch (err) {
+      console.error('EmailJS Modal Error:', err);
+      setLoading(false);
+      setErrorMessage(err?.text || 'Failed to send inquiry via EmailJS. Please try again.');
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setErrorMessage(null);
     setFormData({
       name: '',
       email: '',
       phone: '',
       monthlyOrders: '100-500 orders/mo',
-      primaryGoal: 'Shopify Store Creation & 3PL Shipping'
+      primaryGoal: 'Shopify Setup & 3PL Shipping'
     });
     onClose();
   };
@@ -66,8 +94,8 @@ export default function ContactModal({ isOpen, onClose }) {
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-xl font-extrabold text-[#282734] font-sans">Request Shipping Plan</h3>
-                <p className="text-xs text-[#6B7280] font-medium font-sans">2-Hour Quote Guarantee • Rajasthan 3PL Hub</p>
+                <h3 className="text-xl font-extrabold text-[#282734] font-sans">Request Proposal &amp; Audit</h3>
+                <p className="text-xs text-[#6B7280] font-medium font-sans">2-Hour Quote Guarantee • Growth &amp; Tech Architecture</p>
               </div>
             </div>
 
@@ -88,8 +116,8 @@ export default function ContactModal({ isOpen, onClose }) {
                 </div>
                 <div className="space-y-1">
                   <h4 className="text-2xl font-extrabold text-[#282734]">Proposal Requested!</h4>
-                  <p className="text-sm text-[#4B5563] font-medium max-w-sm mx-auto">
-                    We will review your brand details and send custom 3PL rate sheets to <span className="font-bold text-[#282734]">{formData.email}</span>.
+                  <p className="text-sm text-[#4B5563] font-medium max-w-md mx-auto leading-relaxed">
+                    We will review your requirements for <span className="font-bold text-[#EC2D2E]">{formData.primaryGoal}</span> and send custom rate sheets &amp; project timelines to <span className="font-bold text-[#282734]">{formData.email}</span>.
                   </p>
                 </div>
                 <div className="pt-2">
@@ -100,6 +128,13 @@ export default function ContactModal({ isOpen, onClose }) {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {errorMessage && (
+                  <div className="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
                 <div className="space-y-1">
                   <label className="text-xs font-extrabold text-[#282734] uppercase tracking-wider">Your Full Name *</label>
                   <input

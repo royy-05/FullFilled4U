@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle, Sparkles } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import Button from '../../components/Button/Button';
 
 export default function ContactForm() {
@@ -15,6 +16,7 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const availableServices = [
     'Shopify Store Creation',
@@ -36,14 +38,39 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMessage(null);
 
-    setTimeout(() => {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    const templateParams = {
+      from_name: formData.fullName,
+      from_email: formData.email,
+      phone: formData.phone,
+      company: formData.company || 'N/A',
+      services: formData.servicesNeeded.join(', ') || 'None selected',
+      message: formData.message || 'No additional message',
+      to_email: 'info@fullfilled4u.in'
+    };
+
+    try {
+      if (serviceId && serviceId !== 'YOUR_SERVICE_ID' && publicKey && publicKey !== 'YOUR_PUBLIC_KEY') {
+        await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      } else {
+        // Fallback simulation if keys are not configured yet
+        await new Promise((resolve) => setTimeout(resolve, 1200));
+      }
       setLoading(false);
       setSubmitted(true);
-    }, 1200);
+    } catch (err) {
+      console.error('EmailJS Error:', err);
+      setLoading(false);
+      setErrorMessage(err?.text || 'Failed to send message via EmailJS. Please check your credentials.');
+    }
   };
 
   if (submitted) {
@@ -108,6 +135,13 @@ export default function ContactForm() {
           Fill out your brand details to receive custom 3PL shipping rates and store setup timeline.
         </p>
       </div>
+
+      {errorMessage && (
+        <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold flex items-center gap-2.5">
+          <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+          <span>{errorMessage}</span>
+        </div>
+      )}
 
       {/* Row 1: Full Name & Email */}
       <div className="grid sm:grid-cols-2 gap-5">
