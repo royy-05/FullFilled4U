@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #FD2626;
+  --primary-hover: #D91E1E;
+  --secondary: #282734;
+  --background: #FFFFFF;
+  --surface: #F8F9FC;
+  --text: #282734;
+  --text-light: #6B7280;
+  --border: #E5E7EB;
+  --success: #22C55E;
+  --warning: #F59E0B;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--secondary);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F9FC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FD2626;
+}
+
+.glass-card-light {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+}
+
+.glass-card-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(253, 38, 38, 0.4);
+  transform: translateY(-3px);
+}
+
+.gradient-text-red {
+  background: linear-gradient(135deg, #FD2626 0%, #FF5252 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #FD2626 0%, #FF5252 100%);
+}
+
+/* Refined CTA Button Styling with Pill Shape */
+.btn-primary, .btn-cta {
+  font-family: 'Inter', 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.3px !important;
+  border-radius: 9999px !important;
+  background-color: #FD2626 !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover, .btn-cta:hover {
+  background-color: #D91E1E !important;
+  box-shadow: none !important;
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.02) translateY(-1px);
+}
+
+.grid-bg-light {
+  background-image: radial-gradient(rgba(253, 38, 38, 0.12) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+
+/* Marquee Carousel Animations */
+@keyframes marquee-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-33.333%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 25s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 28s linear infinite;
+}

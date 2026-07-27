@@ -1,0 +1,290 @@
+Created At: 2026-07-27T19:47:48+05:30
+Completed At: 2026-07-27T19:47:49+05:30
+File Path: `file:///C:/Users/royyr/Downloads/fulfilled-4-you/src/components/InfographicsHub.jsx`
+Total Lines: 282
+Total Bytes: 12427
+Showing lines 1 to 282
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import React, { useState } from 'react';
+2: import { motion, AnimatePresence } from 'framer-motion';
+3: import { TrendingUp, X, Sparkles, ExternalLink, ShieldCheck } from 'lucide-react';
+4: import TiltCard from './TiltCard/TiltCard';
+5: 
+6: export default function InfographicsHub({ onOpenProposal }) {
+7:   const [selectedCase, setSelectedCase] = useState(null);
+8: 
+9:   const infographicsData = [
+10:     {
+11:       id: 1,
+12:       brandName: 'Aura Luxury Jewellery',
+13:       niche: 'Fashion & Luxury Jewellery',
+14:       roasBadge: '8x ROAS',
+15:       metricTitle: '₹15.96Cr+ Generated',
+16:       metricSub: '12 Months Revenue Scale',
+17:       image: '/work/Jewellery.webp',
+18:       problemStatement: [
+19:         'Low ROAS and inconsistent scaling across ad channels',
+20:         'High CPA affecting profitability and customer acquisition',
+21:         'Weak creative strategy with limited testing and ad angles',
+22:         'Poor retention, repeat purchases, and retargeting systems'
+23:       ],
+24:       growthResults: [
+25:         'Generated ₹15.96Cr+ revenue in just 12 months at 8x ROAS',
+26:         'Scaled the brand to 1.4L+ profitable orders',
+27:         'Drove 91L+ website sessions through Meta Ads',
+28:         'Increased AOV & repeat purchases via retargeting'
+29:       ],
+30:       colorAccent: '#EC2D2E'
+31:     },
+32:     {
+33:       id: 2,
+34:       brandName: 'Urban Streetwear Label',
+35:       niche: 'Streetwear & Apparel',
+36:       roasBadge: '30-Day Scale',
+37:       metricTitle: '₹1.3Cr+ Revenue',
+38:       metricSub: '12.1K+ Orders Delivered',
+39:       image: '/work/Streeywear.webp',
+40:       problemStatement: [
+41:         'Low conversion rate and high CPMs on Meta ads',
+42:         'Weak AOV affecting profitability',
+43:         'Limited creative testing and repetitive ad creatives',
+44:         'Poor scaling structure in the ad account'
+45:       ],
+46:       growthResults: [
+47:         'Generated ₹1.3Cr+ revenue in just 30 days',
+48:         'Generated 12.1K+ orders in just 30 days',
+49:         'Achieved profitable and scalable campaign performance',
+50:         'Increased conversion rate and CTR through creative testing'
+51:       ],
+52:       colorAccent: '#EC2D2E'
+53:     },
+54:     {
+55:       id: 3,
+56:       brandName: 'Footwear D2C Brand',
+57:       niche: 'Footwear & Apparel',
+58:       roasBadge: '5.65x ROAS',
+59:       metricTitle: '₹5.22Cr+ Sales',
+60:       metricSub: '87.8K+ Orders in 365 Days',
+61:       image: '/work/Footwear.webp',
+62:       problemStatement: [
+63:         'Scaling aggressively while sustaining profitable ROAS',
+64:         'High competition in the online footwear category',
+65:         'Low customer retention & repeat orders'
+66:       ],
+67:       growthResults: [
+68:         '₹5.22Cr+ revenue & 87.8K+ orders in 365 days',
+69:         'Increased repeat customers with WhatsApp & email',
+70:         'Drove 86.24L+ website sessions via Meta & Google Ads'
+71:       ],
+72:       colorAccent: '#EC2D2E'
+73:     },
+74:     {
+75:       id: 4,
+76:       brandName: 'Pure Care D2C',
+77:       niche: 'Personal Care & Beauty',
+78:       roasBadge: '4x+ ROAS',
+79:       metricTitle: '₹10.34Cr+ Total Revenue',
+80:       metricSub: '₹10L Launch in 2 Days',
+81:       image: '/work/Personal Care.webp',
+82:       problemStatement: [
+83:         'Aggressive scaling while maintaining sustainable ROAS',
+84:         'Strong positioning needed in personal care market',
+85:         'Consistent creative pipeline needed for engagement'
+86:       ],
+87:       growthResults: [
+88:         'Generated ₹10.34Cr+ revenue since onboarding',
+89:         'New product launch generated ₹10L in just 2 days',
+90:         'Built strong WhatsApp & email retention flows for repeat orders'
+91:       ],
+92:       colorAccent: '#EC2D2E'
+93:     }
+94:   ];
+95: 
+96:   return (
+97:     <section className="py-24 bg-white relative overflow-hidden font-sans border-b border-[#E5E7EB]">
+98:       {/* Background Subtle Red Glow */}
+99:       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#EC2D2E]/5 rounded-full blur-[180px] pointer-events-none" />
+100: 
+101:       <div className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+102:         
+103:         {/* Section Header with Scroll Entrance */}
+104:         <motion.div 
+105:           initial={{ opacity: 0, y: 30 }}
+106:           whileInView={{ opacity: 1, y: 0 }}
+107:           viewport={{ once: true, amount: 0.3 }}
+108:           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1.0] }}
+109:           className="text-center max-w-3xl mx-auto mb-16 space-y-4 font-sans"
+110:         >
+111:           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EC2D2E]/10 border border-[#EC2D2E]/20 text-[#EC2D2E] text-xs font-extrabold uppercase tracking-wider font-sans">
+112:             <Sparkles className="w-3.5 h-3.5" />
+113:             <span>REAL RESULTS. REAL SCALING.</span>
+114:           </div>
+115: 
+116:           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#282734] font-sans tracking-tight leading-[1.12]">
+117:             <span>D2C Brand Growth </span>
+118:             <span className="font-serif italic font-normal text-[#EC2D2E]">Showcase.</span>
+119:           </h2>
+120: 
+121:           <p className="text-base sm:text-lg text-[#4B5563] font-medium leading-relaxed font-sans">
+122:             Click on any case study card below to inspect full problem statements, growth funnels, and verified revenue numbers.
+123:           </p>
+124:         </motion.div>
+125: 
+126:         {/* 4 Interactive Showcase Cards */}
+127:         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 font-sans">
+128:           {infographicsData.map((item, idx) => (
+129:             <motion.div
+130:               key={item.id}
+131:               initial={{ opacity: 0, y: 35 }}
+132:               whileInView={{ opacity: 1, y: 0 }}
+133:               viewport={{ once: true, amount: 0.2 }}
+134:               transition={{ duration: 0.6, delay: idx * 0.12 }}
+135:             >
+136:               <TiltCard maxTilt={8} className="h-full">
+137:                 <div
+138:                   onClick={() => setSelectedCase(item)}
+139:                   className="bg-white rounded-3xl border border-[#E5E7EB] shadow-xl shadow-[#282734]/5 overflow-hidden flex flex-col justify-between h-full hover:border-[#EC2D2E] hover:shadow-2xl hover:shadow-[#EC2D2E]/10 transition-all duration-300 group cursor-pointer"
+140:                 >
+141:                   {/* Top Image Box */}
+142:                   <div className="relative h-52 sm:h-56 overflow-hidden bg-slate-100">
+143:                     <img 
+144:                       src={item.image} 
+145:                       alt={item.brandName} 
+146:                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+147:                     />
+148:                     <div className="absolute inset-0 bg-gradient-to-t from-[#282734]/80 via-transparent to-transparent" />
+149:                     
+150:                     {/* Floating ROAS Badge */}
+151:                     <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#EC2D2E] text-white text-xs font-extrabold shadow-md">
+152:                       {item.roasBadge}
+153:                     </div>
+154: 
+155:                     <div className="absolute bottom-3 left-4 right-4 text-white">
+156:                       <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-300">
+157:                         {item.niche}
+158:                       </span>
+159:                       <h3 className="text-lg font-extrabold text-white leading-snug">
+160:                         {item.brandName}
+161:                       </h3>
+162:                     </div>
+163:                   </div>
+164: 
+165:                   {/* Card Bottom Body */}
+166:                   <div className="p-6 space-y-4 flex flex-col justify-between flex-grow">
+167:                     <div className="space-y-1">
+168:                       <div className="text-xl font-extrabold text-[#282734]">
+169:                         {item.metricTitle}
+170:                       </div>
+171:                       <div className="text-xs text-[#6B7280] font-bold">
+172:                         {item.metricSub}
+173:                       </div>
+174:                     </div>
+175: 
+176:                     <div className="pt-3 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-extrabold text-[#EC2D2E] group-hover:translate-x-1 transition-transform">
+177:                       <span>View Growth Strategy</span>
+178:                       <ExternalLink className="w-4 h-4" />
+179:                     </div>
+180:                   </div>
+181: 
+182:                 </div>
+183:               </TiltCard>
+184:             </motion.div>
+185:           ))}
+186:         </div>
+187: 
+188:       </div>
+189: 
+190:       {/* Case Study Details Modal Dialog */}
+191:       <AnimatePresence>
+192:         {selectedCase && (
+193:           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 font-sans">
+194:             <motion.div
+195:               initial={{ opacity: 0 }}
+196:               animate={{ opacity: 1 }}
+197:               exit={{ opacity: 0 }}
+198:               onClick={() => setSelectedCase(null)}
+199:               className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+200:             />
+201: 
+202:             <motion.div
+203:               initial={{ opacity: 0, scale: 0.9, y: 20 }}
+204:               animate={{ opacity: 1, scale: 1, y: 0 }}
+205:               exit={{ opacity: 0, scale: 0.9, y: 20 }}
+206:               transition={{ duration: 0.3 }}
+207:               className="relative w-full max-w-2xl bg-white rounded-3xl border border-[#E5E7EB] shadow-2xl p-6 sm:p-8 z-10 overflow-hidden space-y-6"
+208:             >
+209:               {/* Modal Header */}
+210:               <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#E5E7EB]">
+211:                 <div>
+212:                   <span className="text-xs font-extrabold uppercase text-[#EC2D2E] tracking-wider">
+213:                     {selectedCase.niche}
+214:                   </span>
+215:                   <h3 className="text-2xl sm:text-3xl font-extrabold text-[#282734]">
+216:                     {selectedCase.brandName}
+217:                   </h3>
+218:                   <div className="text-sm font-extrabold text-[#22C55E] mt-1">
+219:                     {selectedCase.metricTitle} ({selectedCase.roasBadge})
+220:                   </div>
+221:                 </div>
+222: 
+223:                 <button
+224:                   onClick={() => setSelectedCase(null)}
+225:                   className="w-9 h-9 rounded-full bg-[#F8F9FC] border border-[#E5E7EB] flex items-center justify-center text-[#282734] hover:bg-[#EC2D2E] hover:text-white transition-colors cursor-pointer"
+226:                 >
+227:                   <X className="w-5 h-5" />
+228:                 </button>
+229:               </div>
+230: 
+231:               {/* Problem & Results List */}
+232:               <div className="space-y-5 max-h-[60vh] overflow-y-auto pr-2">
+233:                 <div>
+234:                   <h4 className="text-sm font-extrabold text-[#282734] uppercase tracking-wider mb-2">
+235:                     Problem Statement:
+236:                   </h4>
+237:                   <ul className="space-y-2 bg-[#F8F9FC] p-4 rounded-2xl border border-[#E5E7EB]">
+238:                     {selectedCase.problemStatement.map((prob, idx) => (
+239:                       <li key={idx} className="text-xs sm:text-sm font-semibold text-[#4B5563] flex items-start gap-2">
+240:                         <span className="w-1.5 h-1.5 rounded-full bg-[#EC2D2E] mt-2 shrink-0" />
+241:                         <span>{prob}</span>
+242:                       </li>
+243:                     ))}
+244:                   </ul>
+245:                 </div>
+246: 
+247:                 <div>
+248:                   <h4 className="text-sm font-extrabold text-[#282734] uppercase tracking-wider mb-2">
+249:                     Growth Results:
+250:                   </h4>
+251:                   <ul className="space-y-2 bg-emerald-50/60 p-4 rounded-2xl border border-emerald-200/60">
+252:                     {selectedCase.growthResults.map((res, idx) => (
+253:                       <li key={idx} className="text-xs sm:text-sm font-semibold text-emerald-950 flex items-start gap-2">
+254:                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0" />
+255:                         <span>{res}</span>
+256:                       </li>
+257:                     ))}
+258:                   </ul>
+259:                 </div>
+260:               </div>
+261: 
+262:               {/* Modal Footer CTA */}
+263:               <div className="pt-4 border-t border-[#E5E7EB] flex justify-end">
+264:                 <button
+265:                   onClick={() => {
+266:                     setSelectedCase(null);
+267:                     onOpenProposal();
+268:                   }}
+269:                   className="px-6 py-2.5 rounded-full bg-[#EC2D2E] hover:bg-[#D81F20] text-white text-xs sm:text-sm font-extrabold shadow-md transition-all cursor-pointer"
+270:                 >
+271:                   Scale Your Brand Like This
+272:                 </button>
+273:               </div>
+274: 
+275:             </motion.div>
+276:           </div>
+277:         )}
+278:       </AnimatePresence>
+279:     </section>
+280:   );
+281: }
+282: 
+The above content shows the entire, complete file contents of the requested file.
