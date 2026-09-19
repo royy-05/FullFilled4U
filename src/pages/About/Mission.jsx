@@ -56,7 +56,7 @@ export default function Mission({ onOpenProposal }) {
             </h2>
 
             <p className="text-[#4B5563] text-sm sm:text-base leading-relaxed font-medium font-sans">
-              FULLFILLED4U E-COMMERCE AND SHIPPING PLATFORM was founded on a simple realization: e-commerce founders were forced to split their attention between expensive software agencies and sluggish 3PL providers.
+              FULLFILLED4U E-COMMERCE AND SHIPPING PARTNER was founded on a simple realization: e-commerce founders were forced to split their attention between expensive software agencies and sluggish 3PL providers.
             </p>
 
             <p className="text-[#4B5563] text-sm sm:text-base leading-relaxed font-medium font-sans">

@@ -8,7 +8,7 @@ export default function BrandLogo({ className = "", imgClassName = "h-14 sm:h-16
       {!imgError ? (
         <img
           src="/Logo.png"
-          alt="FULLFILLED4U E-COMMERCE AND SHIPPING PLATFORM Logo"
+          alt="FULLFILLED4U E-COMMERCE AND SHIPPING PARTNER Logo"
           onError={() => setImgError(true)}
           className={`${imgClassName} w-auto object-contain hover:scale-105 transition-all duration-300`}
         />
