@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import BrandLogo from '../BrandLogo/BrandLogo';
 import Button from '../Button/Button';
-import { NAV_LINKS, CONTACT_PHONE, CONTACT_EMAIL, HQ_ADDRESS } from '../../utils/constants';
+import { NAV_LINKS, TRADE_NAME, CONTACT_PHONE, CONTACT_EMAIL, HQ_ADDRESS } from '../../utils/constants';
 
 export default function Navbar({ onOpenProposal, activePage = 'home', onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
@@ -249,19 +249,19 @@ export default function Navbar({ onOpenProposal, activePage = 'home', onNavigate
                     </Button>
                   </div>
 
-                  {/* Google Maps Embed Card - Vesu Surat Gujarat */}
+                  {/* Google Maps Embed Card - Phenoix Tower Surat Gujarat */}
                   <div className="relative rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-md group">
                     <div className="h-40 w-full relative bg-slate-100">
                       <iframe
                         title="HQ Surat Location Map"
-                        src="https://maps.google.com/maps?q=Vesu,%20Surat,%20Gujarat%20395007&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        src="https://maps.google.com/maps?q=Phenoix%20Tower,%20Opp%20Aagam%20Viviana,%20Vesu,%20Surat,%20Gujarat%20395007&t=&z=15&ie=UTF8&iwloc=&output=embed"
                         className="w-full h-full border-0 filter contrast-125"
                         loading="lazy"
                       />
                     </div>
                     
                     <a
-                      href="https://maps.google.com/?q=Vesu,+Surat,+Gujarat+395007"
+                      href="https://maps.google.com/?q=Phenoix+Tower,+Opp+Aagam+Viviana,+Vesu,+Surat,+Gujarat+395007"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="absolute top-3 left-3 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#E5E7EB] text-xs font-extrabold text-[#282734] hover:text-[#EC2D2E] shadow-md flex items-center gap-1.5 transition-colors"
@@ -276,7 +276,7 @@ export default function Navbar({ onOpenProposal, activePage = 'home', onNavigate
 
               {/* Bottom Copyright */}
               <div className="pt-6 mt-6 border-t border-[#E5E7EB] text-center text-xs font-semibold text-[#6B7280]">
-                © {new Date().getFullYear()} FULLFILLED 4 YOU. All rights reserved.
+                © {new Date().getFullYear()} {TRADE_NAME}. All rights reserved.
               </div>
             </motion.aside>
           </>

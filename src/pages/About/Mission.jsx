@@ -56,11 +56,11 @@ export default function Mission({ onOpenProposal }) {
             </h2>
 
             <p className="text-[#4B5563] text-sm sm:text-base leading-relaxed font-medium font-sans">
-              Fulfilled4U was founded on a simple realization: e-commerce founders were forced to split their attention between expensive software agencies and sluggish 3PL providers.
+              FULLFILLED4U E-COMMERCE AND SHIPPING PLATFORM was founded on a simple realization: e-commerce founders were forced to split their attention between expensive software agencies and sluggish 3PL providers.
             </p>
 
             <p className="text-[#4B5563] text-sm sm:text-base leading-relaxed font-medium font-sans">
-              We consolidated everything into one seamless operation. Today, we handle turnkey Shopify store creation, climate-controlled warehousing in Rajasthan, barcoded pick &amp; pack, 2-day doorstep shipping, along with SEO, social ads, and custom web software.
+              We consolidated everything into one seamless operation. Today, we handle turnkey Shopify store creation, climate-controlled warehousing in Surat, Gujarat, barcoded pick &amp; pack, express doorstep shipping, along with SEO, social ads, and custom web software.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 pt-4 font-sans">

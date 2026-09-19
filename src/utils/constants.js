@@ -1,7 +1,9 @@
-export const BRAND_NAME = "FULLFILLED 4 YOU";
-export const CONTACT_PHONE = "+91 8401772206";
+export const BRAND_NAME = "FULLFILLED4U";
+export const TRADE_NAME = "FULLFILLED4U E-COMMERCE AND SHIPPING PLATFORM";
+export const CONTACT_PHONE = "+91 7779010089";
+export const CONTACT_PHONE_RAW = "917779010089";
 export const CONTACT_EMAIL = "support@fullfilled4u.in";
-export const HQ_ADDRESS = "Vesu, Surat, 395007";
+export const HQ_ADDRESS = "G19, Phenoix Tower, Opp Aagam Viviana, Vesu, Surat 395007";
 
 export const SOCIAL_LINKS = [
   { name: 'Instagram', href: 'https://www.instagram.com/fullfilled4u/' },

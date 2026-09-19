@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, ExternalLink, Clock } from 'lucide-react';
-import { CONTACT_PHONE, CONTACT_EMAIL, HQ_ADDRESS } from '../../utils/constants';
+import { Mail, Phone, MapPin, ExternalLink, Clock, Building, ShieldCheck } from 'lucide-react';
+import { TRADE_NAME, CONTACT_PHONE, CONTACT_EMAIL, HQ_ADDRESS } from '../../utils/constants';
 
 export default function ContactInfo() {
   return (
@@ -22,6 +22,30 @@ export default function ContactInfo() {
           <div className="text-xs font-bold uppercase tracking-wider text-[#EC2D2E] font-sans">Response Guarantee</div>
           <div className="text-lg font-extrabold text-[#282734] font-sans">Replies within &lt; 2 Hours</div>
           <div className="text-xs text-[#6B7280] font-sans font-medium mt-0.5">Monday – Saturday, 9 AM – 9 PM IST</div>
+        </div>
+      </motion.div>
+
+      {/* Official Business & Trade Name Verification Box */}
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="bg-[#F8F9FC] p-6 rounded-3xl border border-[#E5E7EB] shadow-lg shadow-[#282734]/5 space-y-4 font-sans"
+      >
+        <div className="flex items-center gap-2.5 text-[#EC2D2E]">
+          <ShieldCheck className="w-5 h-5" />
+          <span className="text-xs font-extrabold uppercase tracking-wider">Registered Trade Name &amp; Entity</span>
+        </div>
+        <div className="space-y-2 text-xs font-medium">
+          <div className="pb-2 border-b border-[#E5E7EB]">
+            <div className="text-[#6B7280] font-bold uppercase text-[10px]">Official Trade Name</div>
+            <div className="text-sm font-extrabold text-[#282734] mt-0.5">{TRADE_NAME}</div>
+          </div>
+          <div>
+            <div className="text-[#6B7280] font-bold uppercase text-[10px]">Registered Office &amp; Operations</div>
+            <div className="text-xs font-bold text-[#282734] mt-0.5 leading-relaxed">{HQ_ADDRESS}</div>
+          </div>
         </div>
       </motion.div>
 
@@ -71,7 +95,7 @@ export default function ContactInfo() {
         </div>
       </motion.div>
 
-      {/* Google Maps Card - Vesu Surat Gujarat India */}
+      {/* Google Maps Card - Phenoix Tower Surat Gujarat */}
       <motion.div 
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -82,14 +106,14 @@ export default function ContactInfo() {
         <div className="h-48 w-full relative bg-slate-100">
           <iframe
             title="HQ Surat Location Map"
-            src="https://maps.google.com/maps?q=Vesu,%20Surat,%20Gujarat%20395007&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=Phenoix%20Tower,%20Opp%20Aagam%20Viviana,%20Vesu,%20Surat,%20Gujarat%20395007&t=&z=15&ie=UTF8&iwloc=&output=embed"
             className="w-full h-full border-0 filter contrast-125"
             loading="lazy"
           />
         </div>
         
         <a
-          href="https://maps.google.com/?q=Vesu,+Surat,+Gujarat+395007"
+          href="https://maps.google.com/?q=Phenoix+Tower,+Opp+Aagam+Viviana,+Vesu,+Surat,+Gujarat+395007"
           target="_blank"
           rel="noopener noreferrer"
           className="absolute top-4 left-4 px-4 py-2 rounded-xl bg-white/95 backdrop-blur-md border border-[#E5E7EB] text-xs font-extrabold text-[#282734] hover:text-[#EC2D2E] shadow-md flex items-center gap-2 transition-colors font-sans"

@@ -12,7 +12,7 @@ import {
   Truck,
   Zap
 } from 'lucide-react';
-import { CONTACT_PHONE, CONTACT_EMAIL } from '../../utils/constants';
+import { TRADE_NAME, CONTACT_PHONE, CONTACT_EMAIL, HQ_ADDRESS } from '../../utils/constants';
 
 export default function Chatbot({ onOpenProposal }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,7 @@ export default function Chatbot({ onOpenProposal }) {
     {
       id: 1,
       sender: 'bot',
-      text: '👋 Welcome to FULLFILLED 4 YOU! I am your AI Growth Assistant. How can I help scale your store today?',
+      text: `👋 Welcome to ${TRADE_NAME}! I am your AI Growth Assistant. How can I help scale your store today?`,
       time: 'Just now'
     }
   ]);
@@ -68,7 +68,7 @@ export default function Chatbot({ onOpenProposal }) {
       return `📈 Our performance marketing agency scales brands with viral UGC ad videos, Meta & Google Ads management targeting 4.8X+ average ROAS!`;
     }
     if (text.includes('location') || text.includes('where') || text.includes('surat') || text.includes('warehouse') || text.includes('address')) {
-      return `📍 Our headquarters and primary 3PL fulfillment hub is located at Vesu, Surat, 395007, connecting your brand to 27,000+ Indian pincodes & global express routes.`;
+      return `📍 Our headquarters and primary 3PL fulfillment hub is located at ${HQ_ADDRESS}, connecting your brand to 27,000+ Indian pincodes & global express routes.`;
     }
     if (text.includes('contact') || text.includes('phone') || text.includes('email') || text.includes('call')) {
       return `📞 You can reach our team directly at ${CONTACT_PHONE} or email us at ${CONTACT_EMAIL}. Monday–Saturday 9 AM – 9 PM IST!`;
@@ -169,12 +169,12 @@ export default function Chatbot({ onOpenProposal }) {
             <div className="bg-[#282734] text-white p-4 sm:p-5 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
                 <div className="relative w-10 h-10 rounded-2xl bg-white p-1 flex items-center justify-center font-bold shadow-md border border-white/20 shrink-0">
-                  <img src="/Logo.png" alt="FullFilled 4 You Logo" className="w-full h-full object-contain" />
+                  <img src="/Logo.png" alt="FULLFILLED4U Logo" className="w-full h-full object-contain" />
                   <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#282734]" />
                 </div>
                 <div>
                   <div className="text-sm font-extrabold flex items-center gap-2">
-                    <span>FULLFILLED 4 YOU AI</span>
+                    <span>FULLFILLED4U AI</span>
                     <Sparkles className="w-3.5 h-3.5 text-[#EC2D2E]" />
                   </div>
                   <div className="text-[11px] text-[#9CA3AF] font-medium flex items-center gap-1.5">

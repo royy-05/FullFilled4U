@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Settings, ExternalLink, MessageCircle, Sparkles } from 'lucide-react';
 import Button from './Button/Button';
+import { CONTACT_PHONE_RAW } from '../utils/constants';
 
 export default function Services({ onOpenProposal }) {
   const [activeTab, setActiveTab] = useState(0);
@@ -239,7 +240,7 @@ export default function Services({ onOpenProposal }) {
               {/* Bottom WhatsApp Link */}
               <div className="mt-8 pt-4 border-t border-[#E5E7EB] text-center">
                 <a
-                  href="https://wa.me/918401772206"
+                  href={`https://wa.me/${CONTACT_PHONE_RAW}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs font-extrabold text-[#282734] hover:text-[#EC2D2E] transition-colors"

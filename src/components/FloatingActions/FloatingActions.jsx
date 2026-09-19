@@ -28,7 +28,7 @@ export default function FloatingActions() {
 
   // Format WhatsApp number without spaces/symbols (917980237823)
   const whatsappNumber = CONTACT_PHONE.replace(/[^0-9]/g, '');
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hi%20Fulfilled4U%2C%20I%20would%20like%20to%20know%20more%20about%20your%203PL%20shipping%20and%20store%20setup%20services.`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hi%20FULLFILLED4U%2C%20I%20would%20like%20to%20know%20more%20about%20your%203PL%20shipping%20and%20store%20setup%20services.`;
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3 font-sans">

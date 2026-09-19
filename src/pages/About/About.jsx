@@ -27,7 +27,7 @@ export default function About({ onOpenProposal }) {
     {
       icon: Globe,
       title: 'Pan-India 3PL Scale',
-      desc: 'Strategic fulfillment hubs across Rajasthan connect your Shopify store directly to major Indian metros & 27,000+ pincodes.'
+      desc: 'Strategic fulfillment hubs in Surat, Gujarat connect your Shopify store directly to major Indian metros & 27,000+ pincodes.'
     },
     {
       icon: BarChart3,
@@ -38,7 +38,7 @@ export default function About({ onOpenProposal }) {
 
   const warehouses = [
     { 
-      location: 'Vesu, Surat, 395007', 
+      location: 'G19, Phenoix Tower, Opp Aagam Viviana, Vesu, Surat 395007', 
       cap: 'Primary HQ & Fulfillment Hub', 
       speed: 'Same-Day Dispatch & Pan-India Shipping' 
     }

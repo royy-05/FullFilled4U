@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import BrandLogo from '../BrandLogo/BrandLogo';
 import Button from '../Button/Button';
-import { CONTACT_PHONE, CONTACT_EMAIL, HQ_ADDRESS, SOCIAL_LINKS } from '../../utils/constants';
+import { TRADE_NAME, CONTACT_PHONE, CONTACT_EMAIL, HQ_ADDRESS, SOCIAL_LINKS } from '../../utils/constants';
 
 export default function Footer({ onOpenProposal, onNavigate }) {
   const handleNav = (e, path) => {
@@ -76,7 +76,7 @@ export default function Footer({ onOpenProposal, onNavigate }) {
             </div>
 
             <p className="text-sm text-[#4B5563] font-medium leading-relaxed max-w-sm font-sans">
-              FULLFILLED 4 YOU is an elite digital marketing engine, 3PL logistics provider, and full-stack software powerhouse in Rajasthan, India. We build Shopify stores, fulfill global shipping, and scale revenues.
+              <strong className="text-[#282734] font-bold">{TRADE_NAME}</strong> is an elite e-commerce growth engine, 3PL logistics provider, and full-stack software powerhouse in Surat, Gujarat, India. We build Shopify stores, fulfill global shipping, and scale revenues.
             </p>
 
             {/* Social Pill Buttons */}
@@ -182,15 +182,21 @@ export default function Footer({ onOpenProposal, onNavigate }) {
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-[#6B7280]">
-          <div>
-            © {new Date().getFullYear()} FULLFILLED 4 YOU. All rights reserved.
+        {/* Bottom Bar with Compliance Trade Name & Legal Policy Links */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-[#6B7280]">
+          <div className="text-center md:text-left space-y-1">
+            <div>
+              © {new Date().getFullYear()} <strong className="text-[#282734] font-bold">{TRADE_NAME}</strong>. All rights reserved.
+            </div>
+            <div className="text-[11px] text-[#4B5563]">
+              Operating Trade Name: <strong>{TRADE_NAME}</strong> • Surat, Gujarat, India
+            </div>
           </div>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-[#EC2D2E] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[#EC2D2E] transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-[#EC2D2E] transition-colors">SLA Guarantee</a>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-semibold">
+            <Link to="/privacy-policy" onClick={(e) => handleNav(e, '/privacy-policy')} className="hover:text-[#EC2D2E] transition-colors">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" onClick={(e) => handleNav(e, '/terms-and-conditions')} className="hover:text-[#EC2D2E] transition-colors">Terms of Service</Link>
+            <Link to="/refund-policy" onClick={(e) => handleNav(e, '/refund-policy')} className="hover:text-[#EC2D2E] transition-colors">Cancellation &amp; Refund</Link>
+            <Link to="/shipping-policy" onClick={(e) => handleNav(e, '/shipping-policy')} className="hover:text-[#EC2D2E] transition-colors">Shipping Policy</Link>
           </div>
         </div>
 

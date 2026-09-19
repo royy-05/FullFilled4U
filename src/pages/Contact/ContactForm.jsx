@@ -87,7 +87,7 @@ export default function ContactForm() {
         <div className="space-y-2">
           <h3 className="text-2xl sm:text-3xl font-extrabold text-[#282734]">Request Received!</h3>
           <p className="text-sm text-[#4B5563] font-medium max-w-md mx-auto leading-relaxed">
-            Thank you, <span className="font-bold text-[#282734]">{formData.fullName}</span>. Our Rajasthan logistics &amp; growth architecture team will review your requirements and reach out within 2 business hours.
+            Thank you, <span className="font-bold text-[#282734]">{formData.fullName}</span>. Our Surat logistics &amp; growth architecture team will review your requirements and reach out within 2 business hours.
           </p>
         </div>
 
